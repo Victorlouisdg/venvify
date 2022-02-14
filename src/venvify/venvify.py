@@ -41,6 +41,7 @@ def setup_activate_scripts(python_dir, bin_path, bin_name, executable_name, env_
 
 
 def venvify(python_dir, env_name):
+    python_dir = os.path.abspath(python_dir)
     bin_name = "Scripts" if sys.platform == "win32" else "bin"
     bin_path = os.path.join(python_dir, bin_name)
 
