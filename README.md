@@ -51,18 +51,13 @@ pip install venvify
 And then run the `venvify` command.
 
 ## Use case: Blender Python environment
-I made this package to make developing python scripts for Blender a bit more convenient. 
+I made this package because, when developing python scripts for Blender, you often need to use its Python interpreter.
+After venvifying the Blender python installation and activating it, you can simply use it as `python` e.g. to install 
+additional packages: `python -m pip install blenderproc` will install BlenderProc into Blender's Python installation.
 
-Blender ships with its own Python installation.
-But specifying the entire path to the Blender Python executable is tedious.
-My initial solution was to add an alias `bpython` to my `.bashrc`. 
-This relieved the burden of typing long paths, but another problem remained.
-
-Some Python packages come with command line entry points. For example, a package I use `BlenderProc` has a command `blenderproc`.
-After installing BlenderProc into the Blender Python installation, there was no way access this command.
-
-However, when you install such a package into a virtual environment, its commands are exposed after sourcing the created `activate` file.
-Hence this package, which allowed me to activate the Blender Python environment and use the commands of the installed Python packages.
+Furthermore, some package like BlenderProc come with command line entry points e.g.
+`blenderproc run <script.py>` etc. When the blender python env is activated, these commands are easily avialable just
+like in a real venv.
 
 Example of how to venvify Blender's Python:
 ```
