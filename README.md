@@ -39,9 +39,10 @@ To undo the venvifying, simply remove the `activate` scripts and the symlinks fr
 
 ## Installation
 All the logic of the package can be found in a single script `venvify.py`.
-The only dependency is the `venv` Python package.
+The only dependency is the [venv](https://docs.python.org/3/library/venv.html) Python standard library package.
+`venv` should be shipped with Python 3, but can be installed with `sudo apt install python3-venv`.
 
-So if you don't want to pip install, you can clone this repo and simply run the script with any Python interpreter with `venv` installed.
+So if you don't want to pip install, you can clone this repo and simply run `venvify.py` with any Python interpreter.
 
 However if you don't mind you can:
 ```
