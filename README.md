@@ -64,11 +64,11 @@ After installing BlenderProc into the Blender Python installation, there was no 
 However, when you install such a package into a virtual environment, its commands are exposed after sourcing the created `activate` file.
 Hence this package, which allowed me to activate the Blender Python environment and use the commands of the installed Python packages.
 
-Example commands:
+Example of how to venvify Blender's Python:
 ```
-venvify ~/blender/blender-3.0.0-linux-x64/3.0/python/ --env_name blender
-source ~/blender/blender-3.0.0-linux-x64/3.0/python/bin/activate
+cd ~/blender-3.0.0-linux-x64/3.0/python/bin
+./python3.9 -m ensurepip
+./pip3 install venvify
+./venvify .. --env_name blender
+source activate
 ```
-
-## TODO
-Maybe in the future this package could also ensure pip gets installed into the environment.
