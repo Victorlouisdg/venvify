@@ -51,12 +51,13 @@ def venvify(python_dir, env_name):
 
     setup_python_symlinks(bin_path, executable_name)
     setup_activate_scripts(python_dir, bin_path, bin_name, executable_name, env_name)
-    
+
     print(f"Added symlinks and activate scripts to {bin_path}")
     print(f"You can activate this environment with:")
     print(f"source {os.path.join(bin_path, 'activate')}")
 
-if __name__ == "__main__":
+
+def cli():
     import argparse
 
     parser = argparse.ArgumentParser()
@@ -69,3 +70,7 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
     venvify(args.python_dir, args.env_name)
+
+
+if __name__ == "__main__":
+    cli()
